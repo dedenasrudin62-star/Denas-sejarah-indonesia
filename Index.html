@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPI Sejarah Islam di Indonesia</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{background:linear-gradient(160deg,#e0f2fe,#bfdbfe);min-height:100vh;font-family:system-ui,sans-serif;color:#0f2a5c}
+.scr{display:none;min-height:100vh;padding:72px 16px 48px;max-width:860px;margin:auto}
+.scr.on{display:block}
+.btn{background:#1d4ed8;color:#fff;font-weight:700;border-radius:14px;padding:12px 20px;box-shadow:0 4px 0 #1e3a8a;transition:transform .15s,background .15s;cursor:pointer}
+.btn:hover{background:#2563eb;transform:translateY(-2px)}
+.btn.alt{background:#fff;color:#1d4ed8;box-shadow:0 4px 0 #93c5fd}
+.btn.alt:hover{background:#dbeafe}
+.btn.sel{background:#fde047;color:#1e3a8a;box-shadow:0 4px 0 #ca8a04}
+.btn.ok{background:#16a34a;box-shadow:0 4px 0 #166534}
+.btn.no{background:#dc2626;box-shadow:0 4px 0 #991b1b}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.card{background:#fff;border-radius:20px;padding:20px;box-shadow:0 6px 20px #1e3a8a22}
+.pop{animation:pop .8s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pop{from{opacity:0;transform:scale(.3) translateY(40px)}to{opacity:1;transform:none}}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.fl{animation:fl 2.5s ease-in-out infinite}
+.d2{animation-delay:.5s}.d3{animation-delay:1s}
+.blank{display:inline-block;min-width:110px;border-bottom:3px dashed #1d4ed8;text-align:center;font-weight:700;color:#1d4ed8;padding:0 6px}
+.mw{display:inline-block;padding:2px 6px;margin:2px;border-radius:8px;cursor:pointer}
+.mw.m{background:#fde047;font-weight:700}
+@media print{body *{visibility:hidden}#certbox,#certbox *{visibility:visible}#certbox{position:absolute;left:0;top:0;width:100%}}
+</style>
+</head>
+<body>
+<button id="home" class="btn hidden fixed top-3 left-3 z-50 !py-2 !px-4">🏠 HOME</button>
+<div class="fixed bottom-0 inset-x-0 text-center text-xs py-1 bg-blue-900 text-blue-100 z-40">Pengembang: Dede Nasrudin, S.Pd. © 2026</div>
+
+<!-- SPLASH -->
+<section id="splash" class="scr on flex flex-col items-center justify-center text-center">
+  <div class="text-7xl pop fl">🕌</div>
+  <h1 class="text-4xl md:text-6xl font-extrabold text-blue-800 mt-4 pop d2">SEJARAH ISLAM<br>DI INDONESIA</h1>
+  <p class="text-lg md:text-xl mt-3 font-semibold pop d3">Media Pembelajaran Interaktif · Sejarah Indonesia · Kelas 10 SMK</p>
+  <button id="start" class="btn text-2xl mt-8 !px-12 !py-4 pop d3">MULAI ▶</button>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="scr text-center">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-blue-800 mb-6">MENU UTAMA</h2>
+  <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+    <button class="btn text-lg !py-6" data-go="beranda">🏠<br>BERANDA</button>
+    <button class="btn text-lg !py-6" data-go="materi">📖<br>MATERI</button>
+    <button class="btn text-lg !py-6" data-go="simulasi">📝<br>SIMULASI</button>
+    <button class="btn text-lg !py-6" data-go="kuis">🎮<br>KUIS</button>
+  </div>
+  <button id="setBtn" class="btn alt mt-6">⚙️ Pengaturan</button>
+  <div id="setPanel" class="card max-w-sm mx-auto mt-3 hidden text-left">
+    <label class="flex items-center justify-between font-bold">Musik latar
+      <button id="musicTg" class="btn !py-1 !px-4">ON</button></label>
+    <label class="block font-bold mt-4">Volume <span id="volTxt">60%</span>
+      <input id="vol" type="range" min="0" max="100" value="60" class="w-full mt-1"></label>
+  </div>
+</section>
+
+<!-- BERANDA -->
+<section id="beranda" class="scr">
+  <div class="card">
+    <h2 class="text-2xl font-extrabold text-blue-800">Selamat Datang, Siswa Hebat! 👋</h2>
+    <p class="mt-3"><b>Mata Pelajaran:</b> Sejarah Indonesia · <b>Kelas:</b> 10 SMK</p>
+    <p><b>Tema:</b> Sejarah Islam di Indonesia</p>
+    <h3 class="font-bold mt-4 text-blue-700">🎯 Tujuan Pembelajaran</h3>
+    <p>Siswa dapat mengidentifikasi dan menyelesaikan masalah yang berkaitan dengan teori masuknya agama Islam di Indonesia.</p>
+    <h3 class="font-bold mt-4 text-blue-700">🧭 Petunjuk</h3>
+    <ol class="list-decimal ml-5">
+      <li>Pelajari menu <b>MATERI</b> terlebih dahulu.</li>
+      <li>Asah kemampuan di menu <b>KUIS</b> (4 game, 3 level).</li>
+      <li>Kerjakan <b>SIMULASI</b> 10 soal untuk meraih sertifikat.</li>
+    </ol>
+    <p class="mt-4 text-sm">Pengembang: Dede Nasrudin, S.Pd. · 2026</p>
+  </div>
+</section>
+
+<!-- MATERI -->
+<section id="materi" class="scr">
+  <h2 class="text-2xl font-extrabold text-blue-800 mb-3">📖 Materi: Teori Masuknya Islam</h2>
+  <div id="tabs" class="flex flex-wrap gap-2 mb-3"></div>
+  <div id="mbody" class="card"></div>
+</section>
+
+<!-- SIMULASI -->
+<section id="simulasi" class="scr">
+  <div id="simIntro" class="card text-center max-w-md mx-auto">
+    <h2 class="text-2xl font-extrabold text-blue-800">📝 Simulasi Uji Pemahaman</h2>
+    <p class="mt-2">10 soal: Drag the Word, Pilihan Ganda, dan Mark the Word.</p>
+    <label for="nama" class="block font-bold mt-4 text-left">Nama Siswa</label>
+    <input id="nama" type="text" autocomplete="off" maxlength="40" placeholder="Ketik nama lengkap kamu..." class="w-full border-2 border-blue-300 rounded-xl p-3 mt-1 text-lg focus:outline-none focus:border-blue-600">
+    <p id="namaErr" class="text-red-600 text-sm hidden mt-1">Nama wajib diisi dulu ya.</p>
+    <label for="kelas" class="block font-bold mt-3 text-left">Kelas</label>
+    <input id="kelas" type="text" autocomplete="off" maxlength="20" placeholder="Contoh: X TKJ 1" class="w-full border-2 border-blue-300 rounded-xl p-3 mt-1 text-lg focus:outline-none focus:border-blue-600">
+    <p id="kelasErr" class="text-red-600 text-sm hidden mt-1">Kelas wajib diisi dulu ya.</p>
+    <button id="simStart" class="btn mt-4">MULAI SIMULASI</button>
+  </div>
+  <div id="simPlay" class="card hidden"></div>
+</section>
+
+<!-- KUIS -->
+<section id="kuis" class="scr">
+  <div id="kMenu">
+    <h2 class="text-2xl font-extrabold text-blue-800 mb-3">🎮 Pilih Game Kuis</h2>
+    <div id="gList" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+  </div>
+  <div id="kLevels" class="hidden"></div>
+  <div id="kPlay" class="card hidden"></div>
+</section>
+
+<!-- SERTIFIKAT -->
+<section id="cert" class="scr text-center">
+  <div id="certbox" class="bg-white border-8 border-double border-blue-700 rounded-2xl p-6 md:p-10">
+    <div class="text-5xl">🏅</div>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-blue-800 mt-2">SERTIFIKAT PENCAPAIAN</h2>
+    <p class="mt-4">Diberikan kepada</p>
+    <p id="cName" class="text-3xl md:text-5xl font-extrabold text-blue-700 my-3 break-words"></p>
+    <p id="cKelas" class="font-bold text-blue-600 -mt-1 mb-3"></p>
+    <p>yang telah menyelesaikan Simulasi <b>Sejarah Islam di Indonesia</b><br>Sejarah Indonesia · Kelas 10 SMK</p>
+    <p class="text-2xl font-bold mt-4">Nilai: <span id="cScore"></span> / 100</p>
+    <p id="cPred" class="font-semibold text-blue-600"></p>
+    <p id="cDate" class="mt-4 text-sm"></p>
+    <p class="mt-4 text-sm">Pengembang: Dede Nasrudin, S.Pd. · 2026</p>
+  </div>
+  <p id="cSync" class="text-sm mt-3"></p>
+  <div class="mt-3 flex gap-3 justify-center flex-wrap">
+    <button class="btn" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+    <button id="csvBtn" class="btn alt">⬇️ Unduh Data (CSV)</button>
+    <button class="btn alt" data-go="menu">Menu Utama</button>
+  </div>
+</section>
+
+<script>
+/* ====== KONFIGURASI ======
+   Tempel URL Web App Google Apps Script (sheet) di bawah agar nilai terkirim otomatis.
+   Data CSV dari sheet itu dapat diimpor ke Canva Sheets. Kosongkan = hanya simpan lokal + unduh CSV. */
+const SHEET_URL = "";
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const shuffle = a => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const norm = s => s.toLowerCase().replace(/[^a-z]/g, "");
+
+/* ====== AUDIO ====== */
+let ac, vol = .6, music = true, step = 0, bgm;
+const AC = () => ac || (ac = new (window.AudioContext || window.webkitAudioContext)());
+function tone(f, d, type = "sine", g = .25, t0 = 0) {
+  try {
+    const c = AC(), o = c.createOscillator(), n = c.createGain(), t = c.currentTime + t0;
+    o.type = type; o.frequency.value = f;
+    n.gain.setValueAtTime(g * vol, t); n.gain.exponentialRampToValueAtTime(.0001, t + d);
+    o.connect(n); n.connect(c.destination); o.start(t); o.stop(t + d);
+  } catch (e) {}
+}
+const sfx = {
+  click: () => tone(720, .08, "triangle"),
+  good: () => [523, 659, 784].forEach((f, i) => tone(f, .18, "triangle", .3, i * .09)),
+  bad: () => { tone(220, .25, "sawtooth", .15); tone(165, .3, "sawtooth", .15, .12); },
+  win: () => [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone(f, .22, "triangle", .3, i * .11))
+};
+const MEL = [523, 587, 659, 784, 659, 587, 523, 392, 440, 523, 587, 659, 587, 523, 440, 392];
+function startBgm() {
+  if (bgm) return;
+  bgm = setInterval(() => { if (music && vol > 0) tone(MEL[step++ % 16] / (step % 8 < 4 ? 2 : 1), .3, "sine", .12); }, 320);
+}
+
+/* ====== NAVIGASI ====== */
+function go(id) {
+  $$(".scr").forEach(s => s.classList.remove("on"));
+  $("#" + id).classList.add("on");
+  $("#home").classList.toggle("hidden", id === "splash");
+  window.scrollTo(0, 0);
+  if (id === "kuis") { $("#kMenu").classList.remove("hidden"); $("#kLevels").classList.add("hidden"); $("#kPlay").classList.add("hidden"); renderGames(); }
+  if (id === "simulasi") { $("#simIntro").classList.remove("hidden"); $("#simPlay").classList.add("hidden"); }
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  sfx.click();
+  if (b.dataset.go) go(b.dataset.go);
+});
+$("#home").onclick = () => go("menu");
+$("#start").onclick = () => { AC().resume(); startBgm(); go("menu"); };
+$("#setBtn").onclick = () => $("#setPanel").classList.toggle("hidden");
+$("#musicTg").onclick = e => { music = !music; e.target.textContent = music ? "ON" : "OFF"; };
+$("#vol").oninput = e => { vol = e.target.value / 100; $("#volTxt").textContent = e.target.value + "%"; };
+
+/* ====== MATERI ====== */
+const MAT = [
+  { t: "Teori Gujarat", s: [["👤 Tokoh & Waktu", "Dipelopori J. Pijnappel, dikembangkan Snouck Hurgronje dan J.P. Moquette. Islam masuk sekitar abad ke-13 M dibawa pedagang dari Gujarat (India)."], ["🔍 Bukti", "Bentuk batu nisan Sultan Malik as-Saleh (wafat 1297 M) di Samudra Pasai mirip nisan di Cambay, Gujarat."], ["⚠️ Kelemahan", "Gujarat baru menjadi wilayah Islam tahun 1298 M, padahal Samudra Pasai sudah Islam sebelumnya. Mazhab di Gujarat juga bukan Syafi'i."]] },
+  { t: "Teori Mekah", s: [["👤 Tokoh & Waktu", "Didukung Hamka, Van Leur, dan T.W. Arnold. Islam masuk sejak abad ke-7 M langsung dari Arab (Mekah)."], ["🔍 Bukti", "Berita Cina Dinasti Tang menyebut pemukiman pedagang Arab di pantai barat Sumatra (Barus). Mazhab Syafi'i dianut Arab dan Nusantara."], ["⚠️ Kelemahan", "Belum ada bukti kuat kerajaan Islam awal pada abad ke-7 di Nusantara."]] },
+  { t: "Teori Persia", s: [["👤 Tokoh & Waktu", "Dikemukakan P.A. Hoesein Djajadiningrat. Islam masuk sekitar abad ke-13 M dari Persia (Iran)."], ["🔍 Bukti", "Kemiripan budaya: peringatan 10 Muharram (Tabuik di Pariaman, Tabot di Bengkulu) dan istilah harakat jabar-jeer."], ["⚠️ Kelemahan", "Mazhab di Persia umumnya Syiah, sedangkan di Nusantara dominan Syafi'i."]] },
+  { t: "Teori Cina", s: [["👤 Tokoh & Waktu", "Dikemukakan antara lain Slamet Mulyana. Islam dibawa pedagang dan perantau muslim Tionghoa sekitar abad ke-9–15 M."], ["🔍 Bukti", "Peran Laksamana Cheng Ho dan komunitas muslim Tionghoa di pesisir Jawa; sebagian sumber menyebut Raden Patah berdarah Tionghoa."], ["⚠️ Kelemahan", "Sumber pendukungnya terbatas dan masih diperdebatkan sejarawan."]] },
+  { t: "Saluran Islamisasi", s: [["💱 Perdagangan & Perkawinan", "Pedagang muslim berdagang di bandar pesisir; pernikahan dengan penduduk lokal membentuk keluarga muslim."], ["🎓 Pendidikan & Tasawuf", "Pesantren mendidik calon ulama; ajaran tasawuf yang lentur mudah diterima masyarakat."], ["🎭 Kesenian & Politik", "Walisongo memakai wayang dan gamelan; raja yang masuk Islam diikuti rakyatnya."]] }
+];
+let mt = 0;
+function renderMat() {
+  $("#tabs").innerHTML = MAT.map((m, i) => `<button class="btn ${i === mt ? "" : "alt"} !py-2 !px-3 text-sm" data-t="${i}">${m.t}</button>`).join("");
+  $("#mbody").innerHTML = `<h3 class="text-xl font-extrabold text-blue-800 mb-2">${MAT[mt].t}</h3><p class="text-sm mb-3">Klik tombol untuk membuka isi:</p>` +
+    MAT[mt].s.map((x, i) => `<button class="btn alt w-full text-left mb-2" data-r="${i}">${x[0]}</button><div id="r${i}" class="hidden bg-blue-50 rounded-xl p-3 mb-3">${x[1]}</div>`).join("");
+}
+$("#tabs").onclick = e => { const b = e.target.closest("[data-t]"); if (b) { mt = +b.dataset.t; renderMat(); } };
+$("#mbody").onclick = e => { const b = e.target.closest("[data-r]"); if (b) $("#r" + b.dataset.r).classList.toggle("hidden"); };
+renderMat();
+
+/* ====== DATA KUIS ====== */
+const T4 = ["Gujarat", "Mekah", "Persia", "Cina"];
+const G = [
+  { n: "Pilih Jawaban", ic: "🎯", ty: "mc", q: [
+    ["Teori yang menyatakan Islam masuk abad ke-7 adalah teori...", ["Mekah", "Gujarat", "Persia", "Cina"], 0],
+    ["Tokoh pengembang teori Gujarat adalah...", ["Snouck Hurgronje", "Hamka", "Hoesein Djajadiningrat", "Slamet Mulyana"], 0],
+    ["Sultan Malik as-Saleh wafat pada tahun...", ["1297 M", "1397 M", "1197 M", "1497 M"], 0],
+    ["Penyebaran Islam lewat pernikahan disebut saluran...", ["Perkawinan", "Politik", "Kesenian", "Pendidikan"], 0],
+    ["Pendukung teori Persia adalah...", ["P.A. Hoesein Djajadiningrat", "J. Pijnappel", "T.W. Arnold", "Moquette"], 0],
+    ["Kelemahan teori Gujarat adalah...", ["Gujarat baru Islam tahun 1298 M", "Tidak ada nisan", "Tidak ada pedagang", "Tidak ada pelabuhan"], 0],
+    ["Kerajaan Islam pertama di Nusantara adalah...", ["Samudra Pasai", "Demak", "Mataram", "Banten"], 0],
+    ["Tradisi Tabuik dapat ditemui di...", ["Pariaman", "Yogyakarta", "Denpasar", "Makassar"], 0],
+    ["Hamka dan Van Leur mendukung teori...", ["Mekah", "Persia", "Gujarat", "Cina"], 0]] },
+  { n: "Benar atau Salah", ic: "⚖️", ty: "tf", q: [
+    ["Teori Mekah menyatakan Islam masuk pada abad ke-7.", 0],
+    ["Samudra Pasai adalah kerajaan Islam pertama di Nusantara.", 0],
+    ["Teori Gujarat menyatakan Islam berasal langsung dari Mekah.", 1],
+    ["Islam di Nusantara hanya menyebar lewat peperangan.", 1],
+    ["Walisongo memakai wayang untuk berdakwah.", 0],
+    ["Snouck Hurgronje adalah pendukung teori Persia.", 1],
+    ["Tabot di Bengkulu dianggap bukti pengaruh Persia.", 0],
+    ["Perkawinan pedagang muslim dengan penduduk lokal adalah saluran Islamisasi.", 0],
+    ["Semua teori sepakat Islam pertama kali masuk di Jawa Timur.", 1]] },
+  { n: "Tebak Teori", ic: "🔎", ty: "th", q: [
+    ["Nisan Malik as-Saleh mirip nisan di Cambay.", 0],
+    ["Peringatan Asyura: Tabuik dan Tabot.", 2],
+    ["Berita Dinasti Tang: pemukiman Arab di Barus.", 1],
+    ["Laksamana Cheng Ho dan komunitas Tionghoa muslim.", 3],
+    ["Dikembangkan Pijnappel dan Snouck Hurgronje.", 0],
+    ["Hamka menolaknya dan mendukung peran Arab langsung.", 1],
+    ["Istilah harakat jabar-jeer dari Iran.", 2],
+    ["Dikemukakan oleh Slamet Mulyana.", 3],
+    ["Islam abad ke-13 dibawa pedagang India.", 0]] },
+  { n: "Isi Titik-titik", ic: "✍️", ty: "fl", q: [
+    ["Kerajaan Islam pertama di Nusantara bernama Samudra ___.", ["pasai"], "P…"],
+    ["Teori yang menyebut Islam dibawa pedagang Arab abad ke-7 adalah teori ___.", ["mekah", "arab"], "M…"],
+    ["Penyebaran Islam lewat jual-beli termasuk saluran ___.", ["dagang"], "perdagang…"],
+    ["Walisongo memakai kesenian ___ untuk berdakwah.", ["wayang"], "w…"],
+    ["Laksamana muslim dari Cina bernama ___ Ho.", ["cheng", "zheng"], "Ch…"],
+    ["Tabot dan Tabuik dikaitkan dengan teori ___.", ["persia"], "P…"],
+    ["Tokoh teori Persia: Hoesein ___.", ["djajadiningrat", "jayadiningrat"], "Dj…"],
+    ["Mazhab fikih dominan di Nusantara adalah mazhab ___.", ["syafi", "shafi"], "Sy…"],
+    ["Berita dari Dinasti ___ menyebut pemukiman Arab di Sumatra.", ["tang"], "T…"]] }
+];
+const prog = [1, 1, 1, 1];
+
+/* ====== KUIS ====== */
+let cg = 0, cl = 0, qs = [], qi = 0, qsc = 0;
+function renderGames() {
+  $("#gList").innerHTML = G.map((g, i) => `<button class="btn alt text-left !py-5" data-g="${i}"><span class="text-3xl">${g.ic}</span> <span class="text-lg font-extrabold">Game ${i + 1}: ${g.n}</span><br><span class="text-sm font-normal">Level terbuka: ${prog[i]}/3</span></button>`).join("");
+}
+$("#gList").onclick = e => { const b = e.target.closest("[data-g]"); if (b) { cg = +b.dataset.g; showLevels(); } };
+function showLevels() {
+  $("#kMenu").classList.add("hidden"); $("#kPlay").classList.add("hidden"); $("#kLevels").classList.remove("hidden");
+  $("#kLevels").innerHTML = `<h2 class="text-2xl font-extrabold text-blue-800 mb-3">${G[cg].ic} ${G[cg].n}</h2><p class="mb-3">Jawab benar minimal 2 dari 3 soal untuk membuka level berikutnya.</p><div class="grid grid-cols-3 gap-3">` +
+    [0, 1, 2].map(l => `<button class="btn ${l < prog[cg] ? "" : "alt"} !py-6" data-l="${l}" ${l < prog[cg] ? "" : "disabled"}>${l < prog[cg] ? "Level " + (l + 1) : "🔒 Level " + (l + 1)}</button>`).join("") +
+    `</div><button class="btn alt mt-4" id="kBack">← Pilih Game</button>`;
+  $("#kBack").onclick = () => go("kuis");
+}
+$("#kLevels").onclick = e => { const b = e.target.closest("[data-l]"); if (b && !b.disabled) { cl = +b.dataset.l; qs = G[cg].q.slice(cl * 3, cl * 3 + 3); qi = 0; qsc = 0; $("#kLevels").classList.add("hidden"); $("#kPlay").classList.remove("hidden"); renderQ(); } };
+function renderQ() {
+  const g = G[cg], q = qs[qi]; let h = `<p class="text-sm font-bold text-blue-600">Level ${cl + 1} · Soal ${qi + 1}/3 · Skor ${qsc}</p><p class="text-xl font-bold my-3">${q[0]}</p><div id="opts" class="grid gap-2">`;
+  if (g.ty === "mc") { const c = q[1][q[2]]; h += shuffle(q[1]).map(o => `<button class="btn alt text-left" data-o="${o === c ? 1 : 0}">${o}</button>`).join(""); }
+  else if (g.ty === "tf") h += ["Benar", "Salah"].map((o, i) => `<button class="btn alt" data-o="${i === q[1] ? 1 : 0}">${o}</button>`).join("");
+  else if (g.ty === "th") h += T4.map((o, i) => `<button class="btn alt" data-o="${i === q[1] ? 1 : 0}">Teori ${o}</button>`).join("");
+  else h += `<input id="fi" type="text" autocomplete="off" placeholder="Petunjuk: ${q[2]}" class="border-2 border-blue-300 rounded-xl p-3 text-lg focus:outline-none focus:border-blue-600"><button class="btn" id="fc">Periksa</button>`;
+  $("#kPlay").innerHTML = h + `</div><div id="fb" class="mt-3 font-bold"></div>`;
+  if (g.ty === "fl") { $("#fi").focus(); $("#fc").onclick = () => { const v = norm($("#fi").value); if (!v) return; ans(q[1].some(a => v.includes(a)), $("#fc")); }; $("#fi").onkeydown = e => { if (e.key === "Enter") $("#fc").click(); }; }
+}
+$("#kPlay").onclick = e => {
+  const b = e.target.closest("[data-o]"); if (b && !b.disabled) ans(b.dataset.o === "1", b);
+  if (e.target.closest("#nx")) { qi++; if (qi < 3) renderQ(); else endLevel(); }
+};
+function ans(ok, b) {
+  $$("#opts button, #opts input").forEach(x => x.disabled = true);
+  if (b.dataset.o) b.classList.replace("alt", ok ? "ok" : "no");
+  if (ok) { qsc++; sfx.good(); } else sfx.bad();
+  const q = qs[qi];
+  const ex = G[cg].ty === "fl" ? " Jawaban: " + q[1][0] : "";
+  $("#fb").innerHTML = (ok ? "✅ Benar!" : "❌ Kurang tepat." + ex) + `<br><button id="nx" class="btn mt-2">${qi < 2 ? "Lanjut ▶" : "Selesai ▶"}</button>`;
+}
+function endLevel() {
+  const pass = qsc >= 2, last = cl === 2;
+  if (pass && cl + 1 === prog[cg] && !last) prog[cg]++;
+  pass ? sfx.win() : sfx.bad();
+  $("#kPlay").innerHTML = `<div class="text-center"><div class="text-6xl">${pass ? "🎉" : "💪"}</div><h3 class="text-2xl font-extrabold mt-2">Skor: ${qsc}/3</h3><p class="my-2">${pass ? (last ? "Hebat! Game ini tuntas!" : "Level berikutnya terbuka!") : "Ayo coba lagi, kamu pasti bisa!"}</p><div class="flex gap-3 justify-center flex-wrap"><button class="btn" id="kl">Pilih Level</button><button class="btn alt" data-go="kuis">Pilih Game</button></div></div>`;
+  $("#kl").onclick = showLevels;
+}
+
+/* ====== SIMULASI ====== */
+const SIM = [
+  { t: "d", q: "Teori ___ menyatakan Islam dibawa pedagang dari India pada abad ke-13.", w: ["Gujarat", "Mekah", "Persia", "Cina"], a: "Gujarat" },
+  { t: "d", q: "Kerajaan Islam pertama di Nusantara adalah ___.", w: ["Samudra Pasai", "Demak", "Mataram", "Banten"], a: "Samudra Pasai" },
+  { t: "d", q: "Hamka mendukung teori ___ yang menyebut Islam masuk abad ke-7.", w: ["Mekah", "Persia", "Gujarat", "Cina"], a: "Mekah" },
+  { t: "d", q: "Tabuik di Pariaman dihubungkan dengan pengaruh ___.", w: ["Persia", "Cina", "Gujarat", "Eropa"], a: "Persia" },
+  { t: "m", q: "Kelemahan utama teori Gujarat adalah...", o: ["Gujarat baru Islam tahun 1298 M, sedangkan Pasai sudah Islam", "Tidak ada pedagang dari India", "Tidak ada batu nisan di Pasai", "Tidak ada pelabuhan di Sumatra"], a: 0 },
+  { t: "m", q: "Bukti utama teori Mekah adalah...", o: ["Berita Cina Dinasti Tang tentang pemukiman Arab di Sumatra", "Tabuik di Pariaman", "Nisan di Cambay", "Peran Cheng Ho"], a: 0 },
+  { t: "m", q: "Gamelan dan wayang digunakan dalam saluran Islamisasi melalui...", o: ["Kesenian", "Politik", "Perkawinan", "Perdagangan"], a: 0 },
+  { t: "m", q: "Peran Laksamana Cheng Ho paling terkait dengan teori...", o: ["Cina", "Persia", "Gujarat", "Mekah"], a: 0 },
+  { t: "k", q: "Klik kata yang SALAH: Menurut teori Gujarat, Islam masuk ke Nusantara pada abad ke-7 melalui pedagang India.", a: "ke7" },
+  { t: "k", q: "Klik kata yang SALAH: Kerajaan Samudra Pasai berdiri pada abad ke-13 di Pulau Jawa.", a: "jawa" }
+];
+let si = 0, ssc = 0, pick = null, nama = "", kelas = "";
+$("#simStart").onclick = () => {
+  nama = $("#nama").value.trim(); kelas = $("#kelas").value.trim();
+  $("#namaErr").classList.toggle("hidden", !!nama);
+  $("#kelasErr").classList.toggle("hidden", !!kelas);
+  if (!nama) { $("#nama").focus(); return; }
+  if (!kelas) { $("#kelas").focus(); return; }
+  si = 0; ssc = 0;
+  $("#simIntro").classList.add("hidden"); $("#simPlay").classList.remove("hidden"); simQ();
+};
+function simQ() {
+  const q = SIM[si]; pick = null;
+  let h = `<p class="text-sm font-bold text-blue-600">Soal ${si + 1} dari 10 · ${q.t === "d" ? "Drag the Word" : q.t === "m" ? "Pilihan Ganda" : "Mark the Word"}</p><div class="w-full bg-blue-100 rounded-full h-2 my-2"><div class="bg-blue-600 h-2 rounded-full" style="width:${si * 10}%"></div></div>`;
+  if (q.t === "d") {
+    h += `<p class="text-lg my-4 leading-loose">${q.q.replace("___", '<span id="bl" class="blank" data-drop="1">&nbsp;</span>')}</p><p class="text-sm mb-1">Seret kata ke kotak kosong (atau cukup klik kata):</p><div class="flex flex-wrap gap-2">${shuffle(q.w).map(w => `<button class="btn" draggable="true" data-w="${w}">${w}</button>`).join("")}</div>`;
+  } else if (q.t === "m") {
+    h += `<p class="text-lg my-4 font-semibold">${q.q}</p><div class="grid gap-2">${shuffle(q.o.map((o, i) => [o, i])).map(([o, i]) => `<button class="btn alt text-left" data-mc="${i}">${o}</button>`).join("")}</div>`;
+  } else {
+    const [lead, sent] = q.q.split(": ");
+    h += `<p class="font-semibold mt-3">${lead}</p><p class="text-lg my-3 leading-loose">${sent.split(" ").map(w => `<span class="mw" data-k="${norm(w)}">${w}</span>`).join(" ")}</p>`;
+  }
+  $("#simPlay").innerHTML = h + `<div class="mt-5 text-right"><button id="sn" class="btn">${si < 9 ? "Lanjut ▶" : "Selesai ✔"}</button></div><p id="se" class="text-red-600 text-sm hidden text-right">Jawab dulu ya.</p>`;
+}
+const fillBlank = w => { const b = $("#bl"); if (b) { b.textContent = w; pick = w; sfx.click(); } };
+$("#simPlay").onclick = e => {
+  const t = e.target;
+  if (t.closest("[data-w]")) fillBlank(t.closest("[data-w]").dataset.w);
+  const mc = t.closest("[data-mc]");
+  if (mc) { $$("[data-mc]").forEach(x => x.classList.replace("sel", "alt")); mc.classList.replace("alt", "sel"); pick = +mc.dataset.mc; }
+  const k = t.closest("[data-k]");
+  if (k) { $$("[data-k]").forEach(x => x.classList.remove("m")); k.classList.add("m"); pick = k.dataset.k; }
+  if (t.closest("#sn")) {
+    if (pick === null) { $("#se").classList.remove("hidden"); return; }
+    const q = SIM[si];
+    if (q.t === "d" ? pick === q.a : q.t === "m" ? pick === q.a : pick === q.a) ssc++;
+    si++; si < 10 ? simQ() : finish();
+  }
+};
+$("#simPlay").addEventListener("dragstart", e => { const w = e.target.closest("[data-w]"); if (w) e.dataTransfer.setData("text", w.dataset.w); });
+$("#simPlay").addEventListener("dragover", e => { if (e.target.closest("[data-drop]")) e.preventDefault(); });
+$("#simPlay").addEventListener("drop", e => { if (e.target.closest("[data-drop]")) { e.preventDefault(); fillBlank(e.dataTransfer.getData("text")); } });
+
+function finish() {
+  const skor = ssc * 10, now = new Date();
+  const rec = { nama, kelas, skor, waktu: now.toLocaleString("id-ID") };
+  $("#cName").textContent = nama; $("#cKelas").textContent = "Kelas " + kelas; $("#cScore").textContent = skor;
+  $("#cPred").textContent = skor >= 80 ? "Predikat: Sangat Baik ⭐" : skor >= 60 ? "Predikat: Baik 👍" : "Predikat: Terus Berlatih 💪";
+  $("#cDate").textContent = now.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" });
+  try { const d = JSON.parse(localStorage.getItem("mpi_nilai") || "[]"); d.push(rec); localStorage.setItem("mpi_nilai", JSON.stringify(d)); } catch (e) {}
+  if (SHEET_URL) {
+    $("#cSync").textContent = "Mengirim nilai ke Sheet...";
+    fetch(SHEET_URL, { method: "POST", mode: "no-cors", body: JSON.stringify(rec) }).then(() => $("#cSync").textContent = "✅ Nilai terkirim ke Sheet.").catch(() => $("#cSync").textContent = "⚠️ Gagal terkirim. Gunakan unduh CSV.");
+  } else $("#cSync").textContent = "Nilai tersimpan di perangkat ini (URL Sheet belum diisi).";
+  sfx.win(); go("cert");
+}
+$("#csvBtn").onclick = () => {
+  let d = []; try { d = JSON.parse(localStorage.getItem("mpi_nilai") || "[]"); } catch (e) {}
+  const csv = "Nama,Kelas,Skor,Waktu\n" + d.map(r => `"${r.nama.replace(/"/g, "'")}","${(r.kelas || "").replace(/"/g, "'")}",${r.skor},"${r.waktu}"`).join("\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = "nilai_mpi.csv"; a.click();
+};
+</script>
+</body>
+</html>
